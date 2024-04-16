@@ -8,6 +8,10 @@
         private string[] units;
         private string[] steps;
 
+        public void EnterDetails()
+        {
+
+        }
     }
 
 
