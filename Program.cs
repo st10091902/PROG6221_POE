@@ -86,64 +86,79 @@
 
         public void ScaleRecipe()
         {
-            Console.Write("Enter scaling factor (0.5, 2, or 3): ");
-            double factor = double.Parse(Console.ReadLine());
+            double factor;
+            bool validScale = false;
 
-            if (factor == 0.5 || factor == 2 || factor == 3)
+            do
             {
-                for (int i = 0; i < numIngredients; i++)
+                Console.Write("Enter scaling factor (0.5, 2, or 3): ");
+                string input = Console.ReadLine();
+
+                if (double.TryParse(input, out factor))
                 {
-                    if (units[i] == "g") // Scale grams to kilograms if necessary
+                    if (factor == 0.5 || factor == 2 || factor == 3)
                     {
-                        double originalQuantity = quantities[i];
-                        quantities[i] *= factor; // Scale quantity
-
-                        if ((originalQuantity < 1000 && quantities[i] >= 1000) || (originalQuantity >= 1000 && quantities[i] < 1000)) // Check if it crosses the threshold
-                        {
-                            if (quantities[i] >= 1000) // Convert grams to kilograms
-                            {
-                                quantities[i] /= 1000;
-                                units[i] = "kg";
-                            }
-                            else // Convert kilograms to grams
-                            {
-                                quantities[i] *= 1000;
-                                units[i] = "g";
-                            }
-                        }
+                        validScale = true;
                     }
-                    else if (units[i] == "mL") // Scale milliliters to liters if necessary
+                    else
                     {
-                        double originalQuantity = quantities[i];
-                        quantities[i] *= factor; // Scale quantity
-
-                        if ((originalQuantity < 1000 && quantities[i] >= 1000) || (originalQuantity >= 1000 && quantities[i] < 1000)) // Check if it crosses the threshold
-                        {
-                            if (quantities[i] >= 1000) // Convert milliliters to liters
-                            {
-                                quantities[i] /= 1000;
-                                units[i] = "L";
-                            }
-                            else // Convert liters to milliliters
-                            {
-                                quantities[i] *= 1000;
-                                units[i] = "mL";
-                            }
-                        }
-                    }
-                    else // Scale other units
-                    {
-                        quantities[i] *= factor; // Scale quantity
+                        Console.WriteLine("Invalid scaling factor. Please enter 0.5, 2, or 3.");
                     }
                 }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a number.");
+                }
+            } while (!validScale);
 
-                Console.WriteLine("Recipe scaled successfully.");
-            }
-            else
+            for (int i = 0; i < numIngredients; i++)
             {
-                Console.WriteLine("Invalid scaling factor. Please enter 0.5, 2, or 3.");
+                double originalQuantity = quantities[i];
+                quantities[i] *= factor; // Scale quantity
+
+                if (units[i] == "g" || units[i] == "kg") // Handle grams and kilograms
+                {
+                    if (quantities[i] < 1 && quantities[i] >= 0.001) // Convert to grams if scaled down and greater than or equal to 1 gram
+                    {
+                        quantities[i] *= 1000;
+                        units[i] = "g";
+                    }
+                    else if (quantities[i] < 0.001) // Convert to grams if scaled down and less than 1 gram
+                    {
+                        quantities[i] *= 1000000;
+                        units[i] = "mg";
+                    }
+                    else if (quantities[i] >= 1000) // Convert to kilograms if scaled up
+                    {
+                        quantities[i] /= 1000;
+                        units[i] = "kg";
+                    }
+                }
+                else if (units[i] == "mL" || units[i] == "L") // Handle milliliters and liters
+                {
+                    if (quantities[i] < 1 && quantities[i] >= 0.001) // Convert to milliliters if scaled down and greater than or equal to 1 milliliter
+                    {
+                        quantities[i] *= 1000;
+                        units[i] = "mL";
+                    }
+                    else if (quantities[i] < 0.001) // Convert to milliliters if scaled down and less than 1 milliliter
+                    {
+                        quantities[i] *= 1000000;
+                        units[i] = "μL";
+                    }
+                    else if (quantities[i] >= 1000) // Convert to liters if scaled up
+                    {
+                        quantities[i] /= 1000;
+                        units[i] = "L";
+                    }
+                }
             }
+
+            Console.WriteLine("Recipe scaled successfully.");
         }
+
+
+
 
 
         public void ResetQuantities()
