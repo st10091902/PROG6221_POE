@@ -149,6 +149,17 @@
             Console.WriteLine("Quantities reset to original values.");
         }
 
+        public void ClearData()
+        {
+            numIngredients = 0;
+            numSteps = 0;
+            ingredients = null;
+            quantities = null;
+            units = null;
+            steps = null;
+            Console.WriteLine("Data cleared successfully.");
+        }
+
     }
 
 
