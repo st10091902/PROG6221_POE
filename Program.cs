@@ -26,32 +26,49 @@
                 ingredients[i] = Console.ReadLine();
                 Console.Write("Quantity: ");
                 quantities[i] = double.Parse(Console.ReadLine());
-                Console.WriteLine("Select unit:");
-                Console.WriteLine("1. litres (L)");
-                Console.WriteLine("2. millilitres (mL)");
-                Console.WriteLine("3. grams (g)");
-                Console.WriteLine("4. kilograms (kg)");
-                Console.Write("Choice: ");
-                int unitChoice = int.Parse(Console.ReadLine());
-                switch (unitChoice)
+
+                bool validUnit = false;
+                do
                 {
-                    case 1:
-                        units[i] = "L";
-                        break;
-                    case 2:
-                        units[i] = "mL";
-                        break;
-                    case 3:
-                        units[i] = "g";
-                        break;
-                    case 4:
-                        units[i] = "kg";
-                        break;
-                    default:
-                        Console.WriteLine("Invalid choice. Defaulting to grams (g).");
-                        units[i] = "g";
-                        break;
-                }
+                    Console.WriteLine("Select unit:");
+                    Console.WriteLine("1. litres (L)");
+                    Console.WriteLine("2. millilitres (mL)");
+                    Console.WriteLine("3. grams (g)");
+                    Console.WriteLine("4. kilograms (kg)");
+                    Console.WriteLine("5. teaspoons (tsp)");
+                    Console.WriteLine("6. tablespoons (tbsp)");
+                    Console.Write("Choice: ");
+                    int unitChoice;
+                    if (!int.TryParse(Console.ReadLine(), out unitChoice) || unitChoice < 1 || unitChoice > 6)
+                    {
+                        Console.WriteLine("Invalid choice. Please enter a number between 1 and 6.");
+                        continue;
+                    }
+
+                    switch (unitChoice)
+                    {
+                        case 1:
+                            units[i] = "L";
+                            break;
+                        case 2:
+                            units[i] = "mL";
+                            break;
+                        case 3:
+                            units[i] = "g";
+                            break;
+                        case 4:
+                            units[i] = "kg";
+                            break;
+                        case 5:
+                            units[i] = "tsp";
+                            break;
+                        case 6:
+                            units[i] = "tbsp";
+                            break;
+                    }
+
+                    validUnit = true;
+                } while (!validUnit);
             }
 
             Console.Write("Enter the number of steps: ");
@@ -63,8 +80,8 @@
                 Console.Write($"Enter step #{i + 1}: ");
                 steps[i] = Console.ReadLine();
             }
-
         }
+
 
         public void DisplayRecipe()
         {
@@ -152,13 +169,28 @@
                         units[i] = "L";
                     }
                 }
+                else if (units[i] == "tsp" || units[i] == "tbsp") // Handle teaspoons and tablespoons
+                {
+                    if (quantities[i] < 1 && quantities[i] >= 0.333) // Convert to teaspoons if scaled down and greater than or equal to 1 teaspoon
+                    {
+                        quantities[i] *= 3;
+                        units[i] = "tsp";
+                    }
+                    else if (quantities[i] < 0.333) // Convert to teaspoons if scaled down and less than 1 teaspoon
+                    {
+                        quantities[i] *= 9;
+                        units[i] = "tsp";
+                    }
+                    else if (quantities[i] >= 3) // Convert to tablespoons if scaled up
+                    {
+                        quantities[i] /= 3;
+                        units[i] = "tbsp";
+                    }
+                }
             }
 
             Console.WriteLine("Recipe scaled successfully.");
         }
-
-
-
 
 
         public void ResetQuantities()
