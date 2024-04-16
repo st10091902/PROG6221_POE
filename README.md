@@ -7,15 +7,19 @@ The Recipe Application is a command-line tool designed to help users manage and 
 To use the Recipe Application, follow these steps:
 
 1.Clone the Repository: Clone the repository containing the Recipe Application source code to your local machine.
+  
   git clone https://github.com/your-username/recipe-application.git
   
 2.Navigate to the Directory: Change into the directory where you cloned the repository.
+  
   cd recipe-application
   
 3.Compile the Application: Compile the C# code using a C# compiler such as dotnet.
+  
   dotnet build
   
 4.Run the Application: Run the compiled application to start using the Recipe Application.
+  
   dotnet run
 
 ## Usage
