@@ -83,6 +83,41 @@
                 Console.WriteLine($"{i + 1}. {steps[i]}");
             }
         }
+
+        public void ScaleRecipe()
+        {
+            Console.Write("Enter scaling factor (0.5, 2, or 3): ");
+            double factor = double.Parse(Console.ReadLine());
+
+            if (factor == 0.5 || factor == 2 || factor == 3)
+            {
+                for (int i = 0; i < numIngredients; i++)
+                {
+                    // Scale grams to kilograms if necessary
+                    if (units[i] == "g" && factor != 1) 
+                    {
+                        // Convert grams to kilograms
+                        quantities[i] /= 1000; 
+                        units[i] = "kg";
+                    }
+                    // Scale milliliters to liters if necessary
+                    else if (units[i] == "mL" && factor != 1) 
+                    {
+                        // Convert milliliters to liters
+                        quantities[i] /= 1000; 
+                        units[i] = "L";
+                    }
+
+                    quantities[i] *= factor;
+                }
+
+                Console.WriteLine("Recipe scaled successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid scaling factor. Please enter 0.5, 2, or 3.");
+            }
+        }
     }
 
 
