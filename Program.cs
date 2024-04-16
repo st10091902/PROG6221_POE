@@ -94,21 +94,45 @@
                 for (int i = 0; i < numIngredients; i++)
                 {
                     // Scale grams to kilograms if necessary
-                    if (units[i] == "g" && factor != 1) 
+                    if (units[i] == "g") 
                     {
-                        // Convert grams to kilograms
-                        quantities[i] /= 1000; 
-                        units[i] = "kg";
+                        // Scale quantity
+                        quantities[i] *= factor; 
+                        if (factor < 1)
+                        {
+                            // Convert kilograms to grams
+                            quantities[i] *= 1000; 
+                            units[i] = "g";
+                        }
+                        else
+                        {
+                            // Convert grams to kilograms
+                            quantities[i] /= 1000; 
+                            units[i] = "kg";
+                        }
                     }
                     // Scale milliliters to liters if necessary
-                    else if (units[i] == "mL" && factor != 1) 
+                    else if (units[i] == "mL") 
                     {
-                        // Convert milliliters to liters
-                        quantities[i] /= 1000; 
-                        units[i] = "L";
+                        // Scale quantity
+                        quantities[i] *= factor; 
+                        if (factor < 1)
+                        {
+                            // Convert liters to milliliters
+                            quantities[i] *= 1000; 
+                            units[i] = "mL";
+                        }
+                        else
+                        {
+                            // Convert milliliters to liters
+                            quantities[i] /= 1000; 
+                            units[i] = "L";
+                        }
                     }
-
-                    quantities[i] *= factor;
+                    else // Scale other units
+                    {
+                        quantities[i] *= factor; // Scale quantity
+                    }
                 }
 
                 Console.WriteLine("Recipe scaled successfully.");
@@ -118,6 +142,7 @@
                 Console.WriteLine("Invalid scaling factor. Please enter 0.5, 2, or 3.");
             }
         }
+
     }
 
 
