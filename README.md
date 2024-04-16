@@ -38,3 +38,6 @@ Once the Recipe Application is running, you can perform the following actions:
 6.Exit: Exit the application.
 
 Follow the on-screen prompts to navigate through the application and perform the desired actions.
+
+![Screenshot 2024-04-16 230935](https://github.com/st10091902/PROG6221_Part_1/assets/131756745/8d93bbcc-5857-40b0-9e7e-597c8c964181)
+
