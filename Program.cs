@@ -164,24 +164,53 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     class Program
     {
         static void Main(string[] args)
         {
-            
+            Recipe recipe = new Recipe();
+            bool exit = false;
+
+            while (!exit)
+            {
+                Console.WriteLine("Select an option:");
+                Console.WriteLine("1. Enter Recipe Details");
+                Console.WriteLine("2. Display Recipe");
+                Console.WriteLine("3. Scale Recipe");
+                Console.WriteLine("4. Reset Quantities");
+                Console.WriteLine("5. Clear Data");
+                Console.WriteLine("6. Exit");
+                Console.Write("Choice: ");
+                string input = Console.ReadLine();
+                Console.WriteLine();
+
+                switch (input)
+                {
+                    case "1":
+                        recipe.EnterDetails();
+                        break;
+                    case "2":
+                        recipe.DisplayRecipe();
+                        break;
+                    case "3":
+                        recipe.ScaleRecipe();
+                        break;
+                    case "4":
+                        recipe.ResetQuantities();
+                        break;
+                    case "5":
+                        recipe.ClearData();
+                        break;
+                    case "6":
+                        exit = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice. Please try again.");
+                        break;
+                }
+
+                Console.WriteLine();
+            }
         }
     }
 }
