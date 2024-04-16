@@ -93,40 +93,42 @@
             {
                 for (int i = 0; i < numIngredients; i++)
                 {
-                    // Scale grams to kilograms if necessary
-                    if (units[i] == "g") 
+                    if (units[i] == "g") // Scale grams to kilograms if necessary
                     {
-                        // Scale quantity
-                        quantities[i] *= factor; 
-                        if (factor < 1)
+                        double originalQuantity = quantities[i];
+                        quantities[i] *= factor; // Scale quantity
+
+                        if ((originalQuantity < 1000 && quantities[i] >= 1000) || (originalQuantity >= 1000 && quantities[i] < 1000)) // Check if it crosses the threshold
                         {
-                            // Convert kilograms to grams
-                            quantities[i] *= 1000; 
-                            units[i] = "g";
-                        }
-                        else
-                        {
-                            // Convert grams to kilograms
-                            quantities[i] /= 1000; 
-                            units[i] = "kg";
+                            if (quantities[i] >= 1000) // Convert grams to kilograms
+                            {
+                                quantities[i] /= 1000;
+                                units[i] = "kg";
+                            }
+                            else // Convert kilograms to grams
+                            {
+                                quantities[i] *= 1000;
+                                units[i] = "g";
+                            }
                         }
                     }
-                    // Scale milliliters to liters if necessary
-                    else if (units[i] == "mL") 
+                    else if (units[i] == "mL") // Scale milliliters to liters if necessary
                     {
-                        // Scale quantity
-                        quantities[i] *= factor; 
-                        if (factor < 1)
+                        double originalQuantity = quantities[i];
+                        quantities[i] *= factor; // Scale quantity
+
+                        if ((originalQuantity < 1000 && quantities[i] >= 1000) || (originalQuantity >= 1000 && quantities[i] < 1000)) // Check if it crosses the threshold
                         {
-                            // Convert liters to milliliters
-                            quantities[i] *= 1000; 
-                            units[i] = "mL";
-                        }
-                        else
-                        {
-                            // Convert milliliters to liters
-                            quantities[i] /= 1000; 
-                            units[i] = "L";
+                            if (quantities[i] >= 1000) // Convert milliliters to liters
+                            {
+                                quantities[i] /= 1000;
+                                units[i] = "L";
+                            }
+                            else // Convert liters to milliliters
+                            {
+                                quantities[i] *= 1000;
+                                units[i] = "mL";
+                            }
                         }
                     }
                     else // Scale other units
@@ -142,6 +144,7 @@
                 Console.WriteLine("Invalid scaling factor. Please enter 0.5, 2, or 3.");
             }
         }
+
 
         public void ResetQuantities()
         {
