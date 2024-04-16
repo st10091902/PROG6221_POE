@@ -9,6 +9,7 @@
         private string[] steps;
         private int numIngredients;
         private int numSteps;
+        private double[] originalQuantities;
 
         public void EnterDetails()
         {
@@ -18,6 +19,7 @@
             ingredients = new string[numIngredients];
             quantities = new double[numIngredients];
             units = new string[numIngredients];
+            originalQuantities = new double[numIngredients];
 
             for (int i = 0; i < numIngredients; i++)
             {
@@ -25,7 +27,7 @@
                 Console.Write("Name: ");
                 ingredients[i] = Console.ReadLine();
                 Console.Write("Quantity: ");
-                quantities[i] = double.Parse(Console.ReadLine());
+                quantities[i] = double.Parse(Console.ReadLine());               
 
                 bool validUnit = false;
                 do
@@ -69,6 +71,7 @@
 
                     validUnit = true;
                 } while (!validUnit);
+                originalQuantities[i] = quantities[i]; // Store original quantity
             }
 
             Console.Write("Enter the number of steps: ");
@@ -195,9 +198,35 @@
 
         public void ResetQuantities()
         {
-            // Reset quantities to original values
-            Console.WriteLine("Quantities reset to original values.");
+            for (int i = 0; i < numIngredients; i++)
+            {
+                quantities[i] = originalQuantities[i]; // Reset quantities to original values
+
+                // Reset units to original values based on original units
+                switch (units[i])
+                {
+                    case "kg":
+                    case "g":
+                        units[i] = "g";
+                        break;
+                    case "L":
+                    case "mL":
+                    case "μL":
+                        units[i] = "mL";
+                        break;
+                    case "tsp":
+                    case "tbsp":
+                        units[i] = "tsp";
+                        break;
+                }
+            }
+
+            Console.WriteLine("Quantities and units reset to original values.");
         }
+
+
+
+
 
         public void ClearData()
         {
