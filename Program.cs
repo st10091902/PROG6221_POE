@@ -65,6 +65,24 @@
             }
 
         }
+
+        public void DisplayRecipe()
+        {
+            Console.WriteLine("Recipe:");
+            Console.WriteLine("Ingredients:");
+
+            for (int i = 0; i < numIngredients; i++)
+            {
+                Console.WriteLine($"{quantities[i]} {units[i]} of {ingredients[i]}");
+            }
+
+            Console.WriteLine("\nSteps:");
+
+            for (int i = 0; i < numSteps; i++)
+            {
+                Console.WriteLine($"{i + 1}. {steps[i]}");
+            }
+        }
     }
 
 
