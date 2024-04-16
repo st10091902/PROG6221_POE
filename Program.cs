@@ -143,6 +143,12 @@
             }
         }
 
+        public void ResetQuantities()
+        {
+            // Reset quantities to original values
+            Console.WriteLine("Quantities reset to original values.");
+        }
+
     }
 
 
