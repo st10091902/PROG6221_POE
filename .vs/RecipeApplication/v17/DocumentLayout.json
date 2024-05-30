@@ -3,8 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeApplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2CA92F91-27B6-40BD-8089-283B6A2F066F}|RecipeApplication.csproj|c:\\users\\lab_services_student\\onedrive\\desktop\\recipeapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2CA92F91-27B6-40BD-8089-283B6A2F066F}|RecipeApplication.csproj|C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeApplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CA92F91-27B6-40BD-8089-283B6A2F066F}|RecipeApplication.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDBFDB0F-43D1-466C-85A9-9C7ADC3A2014}|..\\RecipeApplicationTest\\RecipeApplicationTest.csproj|c:\\users\\lab_services_student\\onedrive\\desktop\\recipeapplicationtest\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,11 +17,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeApplicationTest\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "..\\RecipeApplicationTest\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeApplicationTest\\UnitTest1.cs",
+              "RelativeToolTip": "..\\RecipeApplicationTest\\UnitTest1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAswBIAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T18:13:05.492Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -28,7 +44,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeApplication\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAuwOEAAAAAAAAA",
+              "ViewState": "AQIAAJoBAAAAAAAAAAAuwM0BAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-16T18:24:29.28Z",
               "EditorCaption": ""
