@@ -3,11 +3,17 @@
   "WorkspaceRootPath": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeApplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2CA92F91-27B6-40BD-8089-283B6A2F066F}|RecipeApplication.csproj|c:\\users\\lab_services_student\\onedrive\\desktop\\recipeapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CA92F91-27B6-40BD-8089-283B6A2F066F}|RecipeApplication.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC1B1C01-0A4C-4D92-B32A-6695E5682E1F}|..\\RecipeApp.Core\\RecipeApp.Core.csproj|c:\\users\\lab_services_student\\onedrive\\desktop\\recipeapp.core\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDBFDB0F-43D1-466C-85A9-9C7ADC3A2014}|..\\RecipeApplicationTest\\RecipeApplicationTest.csproj|c:\\users\\lab_services_student\\onedrive\\desktop\\recipeapplicationtest\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5C1101E5-C64B-488F-B258-45052EB8E58B}|..\\RecipeAppGUI\\RecipeAppGUI.csproj|c:\\users\\lab_services_student\\onedrive\\desktop\\recipeappgui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C1101E5-C64B-488F-B258-45052EB8E58B}|..\\RecipeAppGUI\\RecipeAppGUI.csproj|c:\\users\\lab_services_student\\onedrive\\desktop\\recipeappgui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CA92F91-27B6-40BD-8089-283B6A2F066F}|RecipeApplication.csproj|c:\\users\\lab_services_student\\onedrive\\desktop\\recipeapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CA92F91-27B6-40BD-8089-283B6A2F066F}|RecipeApplication.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,7 +23,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -25,25 +31,51 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeAppGUI\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "..\\RecipeAppGUI\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeAppGUI\\MainWindow.xaml",
+              "RelativeToolTip": "..\\RecipeAppGUI\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-27T10:48:35.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UnitTest1.cs",
-              "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeApplicationTest\\UnitTest1.cs",
-              "RelativeDocumentMoniker": "..\\RecipeApplicationTest\\UnitTest1.cs",
-              "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeApplicationTest\\UnitTest1.cs",
-              "RelativeToolTip": "..\\RecipeApplicationTest\\UnitTest1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAswBIAAAAyAAAA",
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeAppGUI\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "..\\RecipeAppGUI\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeAppGUI\\MainWindow.xaml.cs",
+              "RelativeToolTip": "..\\RecipeAppGUI\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAEYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T18:13:05.492Z"
+              "WhenOpened": "2024-06-27T10:48:35.422Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeApp.Core\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\RecipeApp.Core\\Class1.cs",
+              "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeApp.Core\\Class1.cs",
+              "RelativeToolTip": "..\\RecipeApp.Core\\Class1.cs",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAIwIkAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-27T10:37:46.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeApplication\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\lab_services_student\\OneDrive\\Desktop\\RecipeApplication\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAJ4BAAAAAAAAAAAuwNEBAAAFAAAA",
+              "ViewState": "AQIAALEBAAAAAAAAAAAQwNEBAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-16T18:24:29.28Z",
               "EditorCaption": ""
